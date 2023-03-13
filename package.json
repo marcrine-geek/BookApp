@@ -1,24 +1,39 @@
 {
-  "name": "jobs",
+  "name": "06-jobs-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "“Book Review\" is a book-tracking application built using NodeJS and MongoDB. The app is similar to Goodreads and allows users to keep track of books they have read, are currently reading, and want to read in the future. Users can also rate and review books, create and join book clubs, and discover new books to read through personalized recommendations.",
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "dotenv": "^8.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
+    "express-rate-limit": "^5.3.0",
+    "helmet": "^4.6.0",
     "http-status-codes": "^2.1.4",
+    "joi": "^17.4.0",
     "jsonwebtoken": "^9.0.0",
-    "mongoose": "^5.11.10"
+    "mongoose": "^5.13.16",
+    "rate-limiter": "^0.2.0",
+    "swagger-ui-express": "^4.1.6",
+    "xss-clean": "^0.1.1",
+    "yamljs": "^0.3.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20"
-  }
+    "nodemon": "^2.0.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcrine-geek/BookApp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/marcrine-geek/BookApp/issues"
+  },
+  "homepage": "https://github.com/marcrine-geek/BookApp#readme"
 }

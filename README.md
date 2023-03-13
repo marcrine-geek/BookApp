@@ -4,4 +4,20 @@
 
 The app utilizes MongoDB as its database management system, allowing high scalability and fast data retrieval. Additionally, NodeJS is used to handling the application's backend services, such as user authentication, book data management, and communication with the Open Library API for search functionality.
 
-## pipeline
+## Set up
+
+`npm init`
+`npm start` || `nodemon app`
+
+```
+Setup in the .env file
+MONGO_URI
+JWT_SECRET
+JWT_LIFETIME
+
+```
+
+### API endpoints
+
+`/register`
+`/login`
