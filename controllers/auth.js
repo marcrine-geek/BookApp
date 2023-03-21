@@ -1,4 +1,5 @@
 const User = require('../models/User');
+const Read = require('../models/Read');
 const { StatusCodes } = require('http-status-codes');
 const { BadRequestError, UnauthenticatedError } = require('../errors');
 
@@ -36,7 +37,21 @@ const login = async (req, res) => {
 		.json({ user: { firstname: user.firstname }, token });
 };
 
+const read = async (req, res) => {
+	const read = await Read.create({ ...req.body });
+	console.log(read);
+	res.status(StatusCodes.CREATED).json({ title: read.title });
+};
+
+const toread = async (req, res) => {
+	const toread = await Toread.create({ ...req.body });
+	console.log(toread);
+	res.status(StatusCodes.CREATED).json({ title: toread.title });
+};
+
 module.exports = {
 	register,
 	login,
+	read,
+	toread,
 };

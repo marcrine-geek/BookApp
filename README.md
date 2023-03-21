@@ -21,3 +21,5 @@ JWT_LIFETIME
 
 `/register`
 `/login`
+`/read`
+`/toread`
