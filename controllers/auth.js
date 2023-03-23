@@ -39,21 +39,25 @@ const login = async (req, res) => {
 };
 
 const read = async (req, res) => {
-	const read = await Read.create({ ...req.body });
-	console.log(read);
-	res.status(StatusCodes.CREATED).json({ title: read.title });
+	req.body.createdBy = req.user.userId;
+	const read = await Read.create(req.body);
+	res.status(StatusCodes.CREATED).json({ read });
 };
 
 const toread = async (req, res) => {
-	const toread = await Toread.create({ ...req.body });
-	console.log(toread);
-	res.status(StatusCodes.CREATED).json({ title: toread.title });
+	req.body.createdBy = req.user.userId;
+	const toread = await Toread.create(req.body);
+	res.status(StatusCodes.CREATED).json({ toread });
 };
 
 const getReadBooks = async (req, res) => {
-	const books = await Read.find({ createdBy: req.user.userId });
-	console.log(books);
-	res.status(StatusCodes.OK).json({ books, count: books.length });
+	const book = await Read.find({ createdBy: req.user.userId });
+	res.status(StatusCodes.OK).json({ book, count: book.length });
+};
+
+const getToReadBooks = async (req, res) => {
+	const data = await Toread.find({ createdBy: req.user.userId });
+	res.status(StatusCodes.OK).json({ data, count: data.length });
 };
 
 module.exports = {
@@ -62,4 +66,5 @@ module.exports = {
 	read,
 	toread,
 	getReadBooks,
+	getToReadBooks,
 };
