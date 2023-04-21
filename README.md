@@ -20,7 +20,7 @@ JWT_LIFETIME
 
 ### API endpoints
 
-`/register`
-`/login`
-`/read`
-`/toread`
+- `/register`
+- `/login`
+- `/read`
+- `/toread`
