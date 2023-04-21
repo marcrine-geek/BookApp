@@ -7,6 +7,7 @@ The app utilizes MongoDB as its database management system, allowing high scalab
 ## Set up
 
 `npm init`
+`npm install`
 `npm start` || `nodemon app`
 
 ```
